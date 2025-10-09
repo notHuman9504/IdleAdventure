@@ -119,10 +119,13 @@ public class InventorySystem : MonoBehaviour
         Debug.Log("================");
     }
 
-    // Override for UI updates (implement when you add UI)
+    // Call UI updates
     private void UpdateInventoryUI()
     {
-        // This will be called whenever inventory changes
-        // You can implement UI updates here later
+        InventoryUI ui = FindObjectOfType<InventoryUI>();
+        if (ui != null)
+        {
+            ui.UpdateInventoryDisplay();
+        }
     }
 }
